@@ -1,0 +1,45 @@
+#!/usr/bin/env perl
+
+use v5.10;
+use utf8;
+use strict;
+use FindBin qw($Bin $Script);
+use YAML::XS qw(LoadFile);
+use Getopt::Long;
+use Readonly;
+use Try::Catch;
+
+Readonly::Scalar my $MSG_FILE => "$Bin/$Script.yml";
+
+sub main {
+    my $lang = '*';
+    try {
+        GetOptions('language=s', \$lang);
+    }
+    catch {
+        die 'Failed getting command line arguments.';
+    };
+
+    my $msgs;
+    try {
+        $msgs = LoadFile($MSG_FILE);
+    }
+    catch {
+        die "Failed loading $MSG_FILE";
+    };
+
+    unless (ref $msgs eq 'HASH') {
+        die "Key ‘$lang’ not found";
+    }
+    unless ($msgs = $msgs->{$lang}) {
+        die "No messages found for ‘$lang’";
+    }
+
+    unless (ref $msgs eq 'ARRAY') {
+        die "No message list for ‘$lang’ found";
+    }
+    say $msgs->[rand @$msgs];
+}
+
+binmode(STDOUT, ':encoding(UTF-8)');
+main();
