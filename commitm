@@ -37,7 +37,7 @@ sub main {
     my $msgs = $load_messages->($lang);
 
     unless (ref $msgs eq 'ARRAY') {
-        die "No ‘$lang’ lang messages";
+        die "No message list for ‘$lang’ found";
     }
 
     say $msgs->[rand @$msgs];
