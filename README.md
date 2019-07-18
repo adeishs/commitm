@@ -13,7 +13,7 @@ Guidelines:
 * Keep it brief. Shorter than 65 characters is great.
 * Add to the appropriate message list for the language. Put under
   `'*'` if it’s not language-specific.
-* Feel free to add another language if one.
+* Feel free to add another language if you need one.
 
 I don’t get paid to do this, so, please be patient if I don’t
 merge your pull request in a timely manner. Also, it’s up to me
