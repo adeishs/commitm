@@ -8,6 +8,7 @@ use YAML::XS qw(LoadFile);
 use Getopt::Long;
 use Try::Catch;
 use Function::Parameters;
+use Pod::Usage qw(pod2usage);
 
 fun load_messages($lang = undef) {
     my $messages;
@@ -30,12 +31,18 @@ fun load_messages($lang = undef) {
 
 fun main() {
     my $lang;
+    my $help = 0;
     try {
-        GetOptions('language=s', \$lang);
+        GetOptions(
+            'help' => \$help,
+            'language=s' => \$lang,
+        );
     }
     catch {
         die 'Failed getting command line arguments.';
     };
+
+    if ($help) { pod2usage(-verbose => 2); }
 
     my $messages;
     try {
@@ -50,3 +57,31 @@ fun main() {
 
 binmode(STDOUT, ':encoding(UTF-8)');
 main();
+
+__END__
+
+=encoding utf-8
+
+=head1 NAME
+
+commitm — Commit Messages Done Quickly!
+
+=head1 SYNOPSIS
+
+commitm [options]
+
+=head1 OPTIONS
+
+Options:
+
+ -help       Display help
+ -lang       Use a language-specific message
+ --language  Same as -lang
+
+If no language is specified, a language-agnostic message will be output.
+
+=head1 DESCRIPTION
+
+Who has much time writing a commit message? Just generate it!
+
+=cut
