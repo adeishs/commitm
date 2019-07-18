@@ -21,4 +21,4 @@ whether I do it.
 
 ## Licence
 © ade ishs. The use of this software is governed by the [MIT
-licence](LICENSE).
+licence](LICENCE.md).
