@@ -5,8 +5,13 @@ from a list.
 ## Contributing
 Want to add commit messages? You’re welcome.
 
-Just fork, update [commitm.yml](commitm.yml), and create a pull
-request.
+Just fork, update the common, language-agnostic message list:
+
+[messages/_.yml](messages/_.yml)
+
+Or language-specific commits, such as: [messages/pl.yml](messages/pl.yml), 
+where the file basename is the common language source code extension. Feel free 
+to add new files for your language of choice, too.
 
 Guidelines:
 * No profanity.
