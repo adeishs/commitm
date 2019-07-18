@@ -1,7 +1,0 @@
----
-# Pascal Lang commit messages
-
-- Change procedure to function as it now to returns something.
-- To be consistent, remove last-statement semicolons in all procs/funcs.
-- Change While to Repeat–Until as the block must run at least once.
-

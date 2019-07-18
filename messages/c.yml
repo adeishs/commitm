@@ -1,7 +1,0 @@
----
-# C Lang commit messages
-
-- "#include <stdlib.h> and get rid of all unnecessary casts of malloc()."
-- Don’t assume ASCII. Use isalpha().
-- Prevent dereferencing pointer one past the upper bound.
-- Prevent making the pointer point to -1.
