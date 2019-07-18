@@ -5,15 +5,11 @@ from a list.
 ## Contributing
 Want to add commit messages? You’re welcome.
 
-Just fork, update the common, language-agnostic message list:
-
-[messages/_.yml](messages/_.yml)
-
-Or language-specific commit messages, such as: 
-
-[messages/pl.yml](messages/pl.yml)
-
-where the file basename is the common language source code extension. 
+Just fork, update one/some/all of these message files:
+* Common, language-agnostic:
+  [commitm.d/messages.yml](commitm.d/messages.yml)
+* Language-specific, such as: 
+  [commitm.d/perl.yml](commitm.d/perl.yml)
 
 Guidelines:
 * No profanity.
