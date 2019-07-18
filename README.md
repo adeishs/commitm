@@ -9,7 +9,7 @@ Just fork, update one/some/all of these message files:
 * Common, language-agnostic:
   [commitm.d/messages.yml](commitm.d/messages.yml)
 * Language-specific, such as: 
-  [commitm.d/perl.yml](commitm.d/perl.yml)
+  [commitm.d/lang/perl.yml](commitm.d/lang/perl.yml)
 
 Guidelines:
 * No profanity.
