@@ -40,6 +40,17 @@
 - Use ISO date format.
 - Make it build.
 
+c:
+- "#include <stdlib.h> and get rid of all unnecessary casts of malloc()."
+- Don’t assume ASCII. Use isalpha().
+- Prevent dereferencing pointer one past the upper bound.
+- Prevent making the pointer point to -1.
+
+pascal:
+- Change procedure to function as it now to returns something.
+- To be consistent, remove last-statement semicolons in all procs/funcs.
+- Change While to Repeat–Until as the block must run at least once.
+
 perl:
 - Check that hashref key exists.
 - Implement reverse lookup using hashref.
@@ -58,3 +69,7 @@ python:
 - Fix erronous execution because of improper indentation.
 - Reformat to make it more PEP-py.
 - Faster string concat with append and join rather than +.
+
+swift:
+- Speed up by using Set.
+- The argument that shall not be named.
