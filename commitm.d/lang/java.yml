@@ -1,0 +1,5 @@
+---
+- Fix NPE.
+- "Refactor: Rename files."
+- "Refactor: Move methods around."
+- "Refactor: Extract out common interface."

@@ -1,0 +1,44 @@
+---
+# These are language-agnostic commit messages. For
+# language-specific ones, see lang/$LANG.yml
+
+- We ❤️ Unicode. 👍👍👍
+- Make it faster.
+- Reduce memory footprint.
+- Don’t use polynomial time complexity!
+- Half done (sort of).
+- Wee refactor.
+- Shorten code.
+- Temp variables not really needed.
+- Make code nicer.
+- Move into directories.
+- Removed useless line.
+- Added description.
+- Use proper copyright glyph.
+- First cut.
+- Change default.
+- Various improvements.
+- Minor typo fix.
+- Fixed docco typo.
+- Refer to config file.
+- Add instruction on how to use.
+- Optimise the length calculation.
+- Parsing code simplified.
+- Adjusted to the new file format.
+- Overall score now calculated correctly.
+- Cosmetic tidy up.
+- Index will be recreated if not up-to-date.
+- Missing newlines added.
+- s/http/https/.
+- Added logo.
+- Oops, should’ve done it in a new branch.
+- More explicit attribution.
+- Use UTF-8.
+- Regexp fixed.
+- Formatting and comment updates.
+- WIP, testing ideas.
+- WIP.
+- Better formatting and timing.
+- Faster algo.
+- Use ISO date format.
+- Make it build.

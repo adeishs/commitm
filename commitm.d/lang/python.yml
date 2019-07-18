@@ -1,0 +1,5 @@
+---
+- Use print() function in both Python 2 and Python 3.
+- Fix erronous execution because of improper indentation.
+- Reformat to make it more PEP-py.
+- Faster string concat with append and join rather than +.
