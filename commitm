@@ -7,26 +7,29 @@ use FindBin qw($Bin $Script);
 use YAML::XS qw(LoadFile);
 use Getopt::Long;
 use Try::Catch;
+use Function::Parameters;
 
-sub main {
-    my $lang = '_';
+fun load_messages($lang = undef) {
+    my $messages;
+    my $msg_file = "$Bin/$Script.d/" . ($lang ? "lang/$lang" : 'messages') .
+                   '.yml';
 
-    my $load_messages = sub {
-        my ($lang) = @_;
-
-        my $msgs;
-        my $msg_file = "$Bin/messages/$lang.yml";
-
-        try {
-            $msgs = LoadFile($msg_file);
-        }
-        catch {
-            die "Failed loading $msg_file -> $_";
-        };
-
-        return $msgs;
+    try {
+        $messages = LoadFile($msg_file);
+    }
+    catch {
+        die "Failed loading $msg_file: $_";
     };
 
+    unless (ref $messages eq 'ARRAY') {
+        die "No message list for ‘$lang’ found";
+    }
+
+    return $messages;
+}
+
+fun main() {
+    my $lang;
     try {
         GetOptions('language=s', \$lang);
     }
@@ -34,13 +37,15 @@ sub main {
         die 'Failed getting command line arguments.';
     };
 
-    my $msgs = $load_messages->($lang);
-
-    unless (ref $msgs eq 'ARRAY') {
-        die "No message list for ‘$lang’ found";
+    my $messages;
+    try {
+        $messages = load_messages($lang);
     }
+    catch {
+        die "Messages not retrieved: $_";
+    };
 
-    say $msgs->[rand @$msgs];
+    say $messages->[rand @$messages];
 }
 
 binmode(STDOUT, ':encoding(UTF-8)');
