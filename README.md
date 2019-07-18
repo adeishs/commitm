@@ -5,8 +5,8 @@ from a list.
 ## Contributing
 Want to add commit messages? You’re welcome.
 
-Just fork, update [commitm.yml](./blob/master/commitm.yml), and
-create a pull request.
+Just fork, update [commitm.yml](commitm.yml), and create a pull
+request.
 
 Guidelines:
 * No profanity.
@@ -21,4 +21,4 @@ whether I do it.
 
 ## Licence
 © ade ishs. The use of this software is governed by the [MIT
-licence](./blob/master/LICENSE).
+licence](LICENSE).
