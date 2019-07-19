@@ -3,3 +3,9 @@
 - "Refactor: Rename files."
 - "Refactor: Move methods around."
 - "Refactor: Extract out common interface."
+- Supply javadoc documentation for all public methods.
+- Use StringBuffer for faster output construction.
+- Be more specific which exceptions being caught.
+- Prevent NullPointerException.
+- Refactor to use NIO.
+- Ditch the Type 1 JDBC driver in favour of the new Type 4 one.
