@@ -1,0 +1,5 @@
+---
+- Change sub to function as it now returns something.
+- Change While to Until as the block must run at least once.
+- Fix wrong file number causing incorrect file format.
+- Just use XOr to flip the bits.
