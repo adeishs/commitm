@@ -1,0 +1,5 @@
+---
+- Convert some functions into arrows.
+- Change vars to lets.
+- It’s clearer to use the new 0b notation.
+- Use the new padStart().
