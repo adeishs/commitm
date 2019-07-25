@@ -10,3 +10,10 @@
 - Need to use "" if you want interpolation, right?
 - Update DBIC schema.
 - Use utf8(0).
+- Prevent reading undef.
+- Casefold with fc.
+- Use i for case-insensitive regexp.
+- ‘my’ not needed.
+- Deref the arrayref.
+- Duplicate hash key removed.
+- Convert subs to Function::Parameters fun/method/route.
