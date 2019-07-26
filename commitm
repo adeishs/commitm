@@ -4,22 +4,31 @@ use v5.10;
 use utf8;
 use strict;
 use FindBin qw($Bin $Script);
-use YAML::XS qw(LoadFile);
+use YAML::XS qw(LoadFile DumpFile);
 use Getopt::Long;
 use Try::Catch;
 use Function::Parameters;
+use File::Copy qw(copy);
+use List::Util qw(first);
+use List::MoreUtils qw(uniq);
 use Pod::Usage qw(pod2usage);
+
+fun get_message_filename($lang = undef) {
+    state $filename = "$Bin/$Script.d/" . ($lang ? "lang/$lang" : 'messages') .
+                      '.yml';
+
+    return $filename;
+}
 
 fun load_messages($lang = undef) {
     my $messages;
-    my $msg_file = "$Bin/$Script.d/" . ($lang ? "lang/$lang" : 'messages') .
-                   '.yml';
+    my $message_filename = get_message_filename($lang);
 
     try {
-        $messages = LoadFile($msg_file);
+        $messages = LoadFile($message_filename);
     }
     catch {
-        die "Failed loading $msg_file: $_";
+        die "Failed loading $message_filename: $_";
     };
 
     unless (ref $messages eq 'ARRAY') {
@@ -29,21 +38,7 @@ fun load_messages($lang = undef) {
     return $messages;
 }
 
-fun main() {
-    my $lang;
-    my $help = 0;
-    try {
-        GetOptions(
-            'help' => \$help,
-            'language=s' => \$lang,
-        );
-    }
-    catch {
-        die 'Failed getting command line arguments.';
-    };
-
-    if ($help) { pod2usage(-verbose => 2); }
-
+fun output_message($lang = undef) {
     my $messages;
     try {
         $messages = load_messages($lang);
@@ -53,6 +48,72 @@ fun main() {
     };
 
     say $messages->[rand @$messages];
+}
+
+fun add_message($lang = undef, $message = undef) {
+    unless ($message) { die "Message can’t be blank" }
+
+    my $messages;
+    my $message_filename = get_message_filename($lang);
+
+    try {
+        $messages = load_messages($lang);
+    }
+    catch {
+        die "Messages not retrieved: $_";
+    };
+
+    if (first { $_ eq $message } @$messages) { return; }
+
+    my $backup_filename = $message_filename . '.bak';
+
+    try {
+        copy($message_filename, $backup_filename);
+    }
+    catch {
+        die "Failed making a backup: $_";
+    };
+
+    $messages = [sort ($message, @$messages)];
+
+    try {
+        DumpFile($message_filename, $messages);
+    }
+    catch {
+        die "Failed writing to $message_filename: $_";
+    };
+
+    unlink $backup_filename;
+}
+
+fun main() {
+    my $lang;
+    my $help = 0;
+    my $added_message;
+    try {
+        GetOptions(
+            'help' => \$help,
+            'language=s' => \$lang,
+            'add=s' => \$added_message,
+        );
+    }
+    catch {
+        die 'Failed getting command line arguments.';
+    };
+
+    if ($help) { pod2usage(-verbose => 2); }
+
+    if ($added_message) {
+        try {
+            add_message($lang, $added_message);
+        }
+        catch {
+            die 'Failed adding message.';
+        };
+    }
+    else {
+        output_message($lang);
+    }
 }
 
 binmode(STDOUT, ':encoding(UTF-8)');
@@ -77,6 +138,7 @@ Options:
  -help       Display help
  -lang       Use a language-specific message
  --language  Same as -lang
+ -add        Add a message
 
 If no language is specified, a language-agnostic message will be output.
 

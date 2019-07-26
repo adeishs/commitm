@@ -1,44 +1,42 @@
 ---
-# These are language-agnostic commit messages. For
-# language-specific ones, see lang/$LANG.yml
-
-- We ❤️ Unicode. 👍👍👍
-- Make it faster.
-- Reduce memory footprint.
+- Add instruction on how to use.
+- Added description.
+- Added logo.
+- Adjusted to the new file format.
+- Better formatting and timing.
+- Cache string length.
+- Change default.
+- Cosmetic tidy up.
 - Don’t use polynomial time complexity!
+- Faster algo.
+- First cut.
+- Fixed docco typo.
+- Formatting and comment updates.
 - Half done (sort of).
-- Wee refactor.
+- Index will be recreated if not up-to-date.
+- Make code nicer.
+- Make it build.
+- Make it faster.
+- Minor typo fix.
+- Missing newlines added.
+- More explicit attribution.
+- Move into directories.
+- Oops, should’ve done it in a new branch.
+- Optimise the length calculation.
+- Overall score now calculated correctly.
+- Parsing code simplified.
+- Reduce memory footprint.
+- Refer to config file.
+- Regexp fixed.
+- Removed useless line.
 - Shorten code.
 - Temp variables not really needed.
-- Make code nicer.
-- Move into directories.
-- Removed useless line.
-- Added description.
-- Use proper copyright glyph.
-- First cut.
-- Change default.
-- Various improvements.
-- Minor typo fix.
-- Fixed docco typo.
-- Refer to config file.
-- Add instruction on how to use.
-- Optimise the length calculation.
-- Parsing code simplified.
-- Adjusted to the new file format.
-- Overall score now calculated correctly.
-- Cosmetic tidy up.
-- Index will be recreated if not up-to-date.
-- Missing newlines added.
-- s/http/https/.
-- Added logo.
-- Oops, should’ve done it in a new branch.
-- More explicit attribution.
+- Use ISO date format.
 - Use UTF-8.
-- Regexp fixed.
-- Formatting and comment updates.
+- Use proper copyright glyph.
+- Various improvements.
 - WIP, testing ideas.
 - WIP.
-- Better formatting and timing.
-- Faster algo.
-- Use ISO date format.
-- Make it build.
+- "We ❤️ Unicode. \U0001F44D\U0001F44D\U0001F44D"
+- Wee refactor.
+- s/http/https/.
