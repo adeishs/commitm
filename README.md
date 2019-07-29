@@ -5,11 +5,15 @@ from a list.
 ## Contributing
 Want to add commit messages? You’re welcome.
 
-Just fork, update one/some/all of these message files:
+Just fork, update one/some/all of these message files by running:
 * Common, language-agnostic:
-  [commitm.d/messages.yml](commitm.d/messages.yml)
+  ```
+  commitm -add "New commit message"
+  ```
 * Language-specific, such as: 
-  [commitm.d/lang/perl.yml](commitm.d/lang/perl.yml)
+  ```
+  commitm -lang perl -add "New commit message"
+  ```
 
 Guidelines:
 * No profanity.
