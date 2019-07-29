@@ -40,3 +40,8 @@
 - "We ❤️ Unicode. \U0001F44D\U0001F44D\U0001F44D"
 - Wee refactor.
 - s/http/https/.
+- Better formatting and timing.
+- Faster algo.
+- Use ISO date format.
+- Make it build.
+- Shorter code, happier programmer. 🤩
