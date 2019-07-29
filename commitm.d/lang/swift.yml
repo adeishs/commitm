@@ -1,3 +1,4 @@
 ---
+- Sort message array.
 - Speed up by using Set.
 - The argument that shall not be named.

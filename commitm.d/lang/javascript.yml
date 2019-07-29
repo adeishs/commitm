@@ -1,5 +1,6 @@
 ---
-- Convert some functions into arrows.
 - Change vars to lets.
+- Convert some functions into arrows.
 - It’s clearer to use the new 0b notation.
+- Sort message array.
 - Use the new padStart().

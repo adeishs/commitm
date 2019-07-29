@@ -1,3 +1,4 @@
 ---
 - Eliminate C-style casts.
 - RAII.
+- Sort message array.

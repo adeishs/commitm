@@ -4,10 +4,12 @@
 - Added logo.
 - Adjusted to the new file format.
 - Better formatting and timing.
+- Better formatting and timing.
 - Cache string length.
 - Change default.
 - Cosmetic tidy up.
 - Don’t use polynomial time complexity!
+- Faster algo.
 - Faster algo.
 - First cut.
 - Fixed docco typo.
@@ -15,6 +17,7 @@
 - Half done (sort of).
 - Index will be recreated if not up-to-date.
 - Make code nicer.
+- Make it build.
 - Make it build.
 - Make it faster.
 - Minor typo fix.
@@ -30,7 +33,10 @@
 - Regexp fixed.
 - Removed useless line.
 - Shorten code.
+- "Shorter code, happier programmer. \U0001F929"
+- Sort messages.
 - Temp variables not really needed.
+- Use ISO date format.
 - Use ISO date format.
 - Use UTF-8.
 - Use proper copyright glyph.
@@ -40,8 +46,3 @@
 - "We ❤️ Unicode. \U0001F44D\U0001F44D\U0001F44D"
 - Wee refactor.
 - s/http/https/.
-- Better formatting and timing.
-- Faster algo.
-- Use ISO date format.
-- Make it build.
-- Shorter code, happier programmer. 🤩

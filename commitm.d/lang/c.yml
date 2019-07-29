@@ -3,4 +3,5 @@
 - Don’t assume ASCII. Use isalpha().
 - Prevent dereferencing pointer one past the upper bound.
 - Prevent making the pointer point to -1.
+- Sort message array.
 - Use CHAR_BIT to find out the number of bits in a byte.
