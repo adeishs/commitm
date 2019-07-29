@@ -53,26 +53,29 @@ fun output_message($lang = undef) {
 fun add_message($lang = undef, $message = undef) {
     unless ($message) { die "Message can’t be blank" }
 
-    my $messages;
+    my $messages = [];
     my $message_filename = get_message_filename($lang);
+    my $backup_filename;
 
-    try {
-        $messages = load_messages($lang);
+    if (-e $message_filename) {
+        try {
+            $messages = load_messages($lang);
+        }
+        catch {
+            die "Messages not retrieved: $_";
+        };
+
+        if (first { $_ eq $message } @$messages) { return; }
+
+        $backup_filename = $message_filename . '.bak';
+
+        try {
+            copy($message_filename, $backup_filename);
+        }
+        catch {
+            die "Failed making a backup: $_";
+        };
     }
-    catch {
-        die "Messages not retrieved: $_";
-    };
-
-    if (first { $_ eq $message } @$messages) { return; }
-
-    my $backup_filename = $message_filename . '.bak';
-
-    try {
-        copy($message_filename, $backup_filename);
-    }
-    catch {
-        die "Failed making a backup: $_";
-    };
 
     $messages = [sort ($message, @$messages)];
 
@@ -83,25 +86,25 @@ fun add_message($lang = undef, $message = undef) {
         die "Failed writing to $message_filename: $_";
     };
 
-    unlink $backup_filename;
+    unlink $backup_filename if $backup_filename;
 }
 
 fun main() {
     my $lang;
     my $help = 0;
-    my $added_message;
+    my $added_message = '';
     try {
         GetOptions(
             'help' => \$help,
             'language=s' => \$lang,
             'add=s' => \$added_message,
-        );
+        ) or pod2usage(1);
     }
     catch {
         die 'Failed getting command line arguments.';
     };
 
-    if ($help) { pod2usage(-verbose => 2); }
+    if ($help) { pod2usage(1); }
 
     if ($added_message) {
         try {
