@@ -1,20 +1,20 @@
 ---
-- Add List::MoreUtils.
-- Avoid using hashref as hash key.
-- Casefold with fc.
-- Check that hashref key exists.
-- Convert subs to Function::Parameters fun/method/route.
-- Deref the arrayref.
-- Duplicate hash key removed.
-- Implement reverse lookup using hashref.
-- Make it work with 5.10.
-- Modules no longer used.
+- Add List::MoreUtils
+- Avoid using hashref as hash key
+- Casefold with fc
+- Check that hashref key exists
+- Convert subs to Function::Parameters fun/method/route
+- Deref the arrayref
+- Duplicate hash key removed
+- Implement reverse lookup using hashref
+- Make it work with 5.10
+- Remove modules no longer used
 - Need to use "" if you want interpolation, right?
-- Prevent reading undef.
-- Put regexp inside qr.
-- Sort message array.
-- Unused modules removed.
-- Update DBIC schema.
-- Use i for case-insensitive regexp.
-- Use utf8(0).
-- ‘my’ not needed.
+- Prevent reading undef
+- Put regexp inside qr
+- Sort message array
+- Remove unused modules
+- Update DBIC schema
+- Use i for case-insensitive regexp
+- Use utf8(0)
+- Remove unneeded ‘my’

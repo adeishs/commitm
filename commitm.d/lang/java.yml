@@ -1,12 +1,12 @@
 ---
-- Be more specific which exceptions being caught.
-- Ditch the Type 1 JDBC driver in favour of the new Type 4 one.
-- Fix NPE.
-- Prevent NullPointerException.
-- Refactor to use NIO.
-- 'Refactor: Extract out common interface.'
-- 'Refactor: Move methods around.'
-- 'Refactor: Rename files.'
-- Sort message array.
-- Supply javadoc documentation for all public methods.
-- Use StringBuffer for faster output construction.
+- Be more specific which exceptions being caught
+- Ditch the Type 1 JDBC driver in favour of the new Type 4 one
+- Fix NPE
+- Prevent NullPointerException
+- Refactor to use NIO
+- 'Refactor: Extract out common interface'
+- 'Refactor: Move methods around'
+- 'Refactor: Rename files'
+- Sort message array
+- Supply javadoc documentation for all public methods
+- Use StringBuffer for faster output construction

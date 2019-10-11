@@ -1,48 +1,44 @@
 ---
-- Add instruction on how to use.
-- Added description.
-- Added logo.
-- Adjusted to the new file format.
-- Better formatting and timing.
-- Better formatting and timing.
-- Cache string length.
-- Change default.
-- Cosmetic tidy up.
+- Add instruction on how to use
+- Add description
+- Add logo
+- Adjust to the new file format
+- Use better formatting and timing
+- Cache string length
+- Change default
+- Do cosmetic tidy up
 - Don’t use polynomial time complexity!
-- Faster algo.
-- Faster algo.
-- First cut.
-- Fixed docco typo.
-- Formatting and comment updates.
-- Half done (sort of).
-- Index will be recreated if not up-to-date.
-- Make code nicer.
-- Make it build.
-- Make it build.
-- Make it faster.
-- Minor typo fix.
-- Missing newlines added.
-- More explicit attribution.
-- Move into directories.
-- Oops, should’ve done it in a new branch.
-- Optimise the length calculation.
-- Overall score now calculated correctly.
-- Parsing code simplified.
-- Reduce memory footprint.
-- Refer to config file.
-- Regexp fixed.
-- Removed useless line.
-- Shorten code.
+- Use faster algo
+- First cut
+- Fix docco typo
+- Update formatting and comments 
+- Half done (sort of)
+- Recreate index if not up-to-date
+- Make code nicer
+- Make it build
+- Make it faster
+- Fix minor typo
+- Add missing newlines
+- Attribute more explicitly
+- Move into directories
+- Oops, should’ve done it in a new branch
+- Optimise the length calculation
+- Correct overall score calculation
+- Simplify parsing code
+- Reduce memory footprint
+- Refer to config file
+- Fix regexp
+- Remove useless line
+- Shorten code
 - "Shorter code, happier programmer. \U0001F929"
-- Sort messages.
-- Temp variables not really needed.
-- Use ISO date format.
-- Use ISO date format.
-- Use UTF-8.
-- Use proper copyright glyph.
-- Various improvements.
-- WIP, testing ideas.
-- WIP.
+- Sort messages
+- Remove temp variables not really needed
+- Use ISO date format
+- Use UTF-8
+- Use proper copyright glyph
+- Various improvements
+- WIP, testing ideas
+- WIP
 - "We ❤️ Unicode. \U0001F44D\U0001F44D\U0001F44D"
-- Wee refactor.
-- s/http/https/.
+- Wee refactor
+- s/http/https/

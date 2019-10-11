@@ -1,6 +1,6 @@
 ---
-- Faster string concat with append and join rather than +.
-- Fix erronous execution because of improper indentation.
-- Reformat to make it more PEP-py.
-- Sort message array.
-- Use print() function in both Python 2 and Python 3.
+- Use faster string concat with append and join rather than +
+- Fix erronous execution because of improper indentation
+- Reformat to make it more PEP-py
+- Sort message array
+- Use print() function in both Python 2 and Python 3
