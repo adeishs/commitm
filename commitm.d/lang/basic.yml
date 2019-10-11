@@ -1,6 +1,6 @@
 ---
-- Change While to Until as the block must run at least once.
-- Change sub to function as it now returns something.
-- Fix wrong file number causing incorrect file format.
-- Just use XOr to flip the bits.
-- Sort message array.
+- Change While to Until as the block must run at least once
+- Change sub to function as it now returns something
+- Fix wrong file number causing incorrect file format
+- Just use XOr to flip the bits
+- Sort message array
