@@ -11,6 +11,7 @@ use Function::Parameters;
 use File::Copy qw(copy);
 use List::Util qw(first);
 use List::MoreUtils qw(uniq);
+use Regexp::Common qw(profanity);
 use Pod::Usage qw(pod2usage);
 
 fun get_message_filename($lang = undef) {
@@ -52,6 +53,8 @@ fun output_message($lang = undef, $search_str = '') {
 
 fun add_message($lang = undef, $message = undef) {
     unless ($message) { die "Message can’t be blank" }
+
+    if ($RE{profanity}->matches($message)) { die "Profanity disallowed" }
 
     my $messages = [];
     my $message_filename = get_message_filename($lang);
@@ -117,7 +120,7 @@ fun main() {
             add_message($lang, $added_message);
         }
         catch {
-            die 'Failed adding message.';
+            die "Failed adding message: $_";
         };
     }
     else {
