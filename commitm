@@ -20,7 +20,7 @@ fun get_message_filename($lang = undef) {
     return $filename;
 }
 
-fun load_messages($lang = undef) {
+fun load_messages($lang = undef, $search_str = '') {
     my $messages;
     my $message_filename = get_message_filename($lang);
 
@@ -35,13 +35,13 @@ fun load_messages($lang = undef) {
         die "No message list for ‘$lang’ found";
     }
 
-    return $messages;
+    return [grep { /$search_str/ } @$messages];
 }
 
-fun output_message($lang = undef) {
+fun output_message($lang = undef, $search_str = '') {
     my $messages;
     try {
-        $messages = load_messages($lang);
+        $messages = load_messages($lang, $search_str);
     }
     catch {
         die "Messages not retrieved: $_";
@@ -93,11 +93,13 @@ fun main() {
     my $lang;
     my $help = 0;
     my $added_message = '';
+    my $search_str = '';
     try {
         GetOptions(
             'help' => \$help,
             'language=s' => \$lang,
             'add=s' => \$added_message,
+            'grep=s' => \$search_str,
         ) or pod2usage(1);
     }
     catch {
@@ -105,6 +107,10 @@ fun main() {
     };
 
     if ($help) { pod2usage(1); }
+
+    if ($added_message && $search_str) {
+        die 'Cannot both add and grep.';
+    }
 
     if ($added_message) {
         try {
@@ -115,7 +121,7 @@ fun main() {
         };
     }
     else {
-        output_message($lang);
+        output_message($lang, $search_str);
     }
 }
 
@@ -142,6 +148,7 @@ Options:
  -lang       Use a language-specific message
  --language  Same as -lang
  -add        Add a message
+ -grep       Search for a message containing the search substring
 
 If no language is specified, a language-agnostic message will be output.
 
