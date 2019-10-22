@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 DATA_DIR=commitm.d/descriptions
 
