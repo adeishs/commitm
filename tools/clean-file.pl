@@ -20,10 +20,6 @@ clean($file_path);
 sub clean {
     my ($file_path) = @_;
 
-    # Trim out leading and trailing spaces
-    # Exclude empty lines
-    # Skip first 100 lines, usually just metadata
-
     open(my $fh, '<:encoding(UTF-8)', $file_path)
         or die "Could not open file '$file_path': $!";
 
@@ -37,9 +33,10 @@ sub clean {
         last if $max_lines++ == $MAX_LINES;    # Limit sizes 
 
         $line = trim($line);
-        $line = remove_footnote_markers($line);
 
         next if (!$line || $line eq '');       # Trash empty lines
+
+        $line = remove_footnote_markers($line);
 
         # With Gutenberg text files, especially plays, a line marker
         # is significant to differentiate sentences.
