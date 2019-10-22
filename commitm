@@ -4,6 +4,7 @@ use v5.10;
 use utf8;
 use strict;
 use FindBin qw($Bin $Script);
+use lib "$Bin/lib";
 use YAML::XS qw(LoadFile DumpFile);
 use Getopt::Long;
 use Try::Catch;
@@ -13,6 +14,8 @@ use List::Util qw(first);
 use List::MoreUtils qw(uniq);
 use Regexp::Common qw(profanity);
 use Pod::Usage qw(pod2usage);
+
+use DescriptiveMessageGenerator;
 
 fun get_message_filename($lang = undef) {
     state $filename = "$Bin/$Script.d/" . ($lang ? "lang/$lang" : 'messages') .
@@ -95,14 +98,17 @@ fun add_message($lang = undef, $message = undef) {
 fun main() {
     my $lang;
     my $help = 0;
+    my $descriptive = 0;
     my $added_message = '';
     my $search_str = '';
+
     try {
         GetOptions(
             'help' => \$help,
             'language=s' => \$lang,
             'add=s' => \$added_message,
             'grep=s' => \$search_str,
+            'descriptive' => \$descriptive
         ) or pod2usage(1);
     }
     catch {
@@ -125,6 +131,7 @@ fun main() {
     }
     else {
         output_message($lang, $search_str);
+        say "\n" . DescriptiveMessageGenerator::get_message() if $descriptive;        
     }
 }
 
