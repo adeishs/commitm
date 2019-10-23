@@ -15,7 +15,7 @@ use List::MoreUtils qw(uniq);
 use Regexp::Common qw(profanity);
 use Pod::Usage qw(pod2usage);
 
-use DescriptiveMessageGenerator;
+use DescriptionGenerator;
 
 fun get_message_filename($lang = undef) {
     state $filename = "$Bin/$Script.d/" . ($lang ? "lang/$lang" : 'messages') .
@@ -130,8 +130,10 @@ fun main() {
         };
     }
     else {
-        output_message($lang, $search_str);
-        say "\n" . DescriptiveMessageGenerator::get_message() if $descriptive;        
+        output_message($lang, $search_str);        
+        if ($descriptive) {
+            say "\n" . DescriptionGenerator::random_from("$Bin/$Script.d/descriptions")
+        }
     }
 }
 
