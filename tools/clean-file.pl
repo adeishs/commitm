@@ -43,6 +43,8 @@ sub clean {
         push @lines, $line . "\n";
     }
 
+    close($fh);
+
     # Instead of working with lines, we wish to work with sentences.
     # A simple heuristic is to use common punctuation marks as sentence
     # separators.
